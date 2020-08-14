@@ -1,0 +1,16 @@
+﻿@using DoAnWebBanDoChoi.Models
+
+@if (Session["Taikhoan"] != null)
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Chào " + (Session["Taikhoan"] as KhachHang).TenKH, "Quanly", "Nguoidung")</li>
+        <li>@Html.ActionLink("Đăng xuất", "Dangxuat", "Nguoidung")</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Đăng ký", "DangKy", "Nguoidung")</li>
+        <li>@Html.ActionLink("Đăng nhập", "Dangnhap", "Nguoidung")</li>
+    </ul>
+}

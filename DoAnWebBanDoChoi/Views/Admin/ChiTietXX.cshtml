@@ -1,0 +1,26 @@
+﻿@model DoAnWebBanDoChoi.Models.XuatXu
+
+@{
+    ViewBag.Title = "ChiTietXX";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT XUẤT XỨ</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên xuất xứ: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenXX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ĐIỀU CHỈNH", "SuaXX", new { id = Model.MaXX }) |
+    @Html.ActionLink("TRỞ VỀ", "XuatXu")
+</p>

@@ -1,0 +1,16 @@
+ page view for displaying exception information.</summary>
+      <returns>The page view.</returns>
+    </member>
+    <member name="T:System.Web.Mvc.HandleErrorInfo">
+      <summary>Encapsulates information for handling an error that was thrown by an action method.</summary>
+    </member>
+    <member name="M:System.Web.Mvc.HandleErrorInfo.#ctor(System.Exception,System.String,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Web.Mvc.HandleErrorInfo" /> class.</summary>
+      <param name="exception">The exception.</param>
+      <param name="controllerName">The name of the controller.</param>
+      <param name="actionName">The name of the action.</param>
+      <exception cref="T:System.ArgumentNullException">The <paramref name="exception" /> parameter is null.</exception>
+      <exception cref="T:System.ArgumentException">The <paramref name="controllerName" /> or <paramref name="actionName" /> parameter is null or empty.</exception>
+    </member>
+    <member name="P:System.Web.Mvc.HandleErrorInfo.ActionName">
+      <summary>Gets or sets the name of the action that was executing when the exception was 

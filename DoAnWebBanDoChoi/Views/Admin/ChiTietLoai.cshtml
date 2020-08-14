@@ -1,0 +1,26 @@
+﻿@model DoAnWebBanDoChoi.Models.Loai
+
+@{
+    ViewBag.Title = "ChiTietLoai";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN LOẠI</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "SuaLoai", new { id = Model.MaLoai }) |
+    @Html.ActionLink("TRỞ VỀ", "Loai")
+</p>

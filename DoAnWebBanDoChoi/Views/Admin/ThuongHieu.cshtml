@@ -1,0 +1,45 @@
+﻿@using DoAnWebBanDoChoi.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnWebBanDoChoi.Models.ThuongHieu>
+
+@{
+    ViewBag.Title = "ThuongHieu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN THƯƠNG HIỆU</h2>
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "ThemMoiTH")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:200px">
+            Tên thương hiệu:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTH)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaTH", new { id=item.MaTH }) |
+            @Html.ActionLink("Chi tiết", "ChiTietTH", new { id=item.MaTH }) |
+            @Html.ActionLink("Xóa", "XoaTH", new { id=item.MaTH })
+        </td>
+    </tr>
+}
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("ThuongHieu", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Quanly";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center; color:red; font-weight:bold">THÔNG TIN TÀI KHOẢN</h2>
+<html>
+<body class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <h3>Tài khoản:&nbsp;</h3>
+            </div>
+            <div class="row">
+                <h3>Họ và tên:&nbsp;</h3>
+            </div>
+            <div class="row">
+                <h3>Ngày sinh:&nbsp;</h3>
+            </div>
+            <div class="row">
+                <h3>Điện thoại:&nbsp;</h3>
+            </div>
+            <div class="row">
+                <h3>Email:&nbsp;</h3>
+            </div>
+            <div class="row">
+                <h3>Địa chỉ:&nbsp;</h3>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                <h3>&nbsp; @Model.TaiKhoan</h3>
+            </div>
+            <div class="row">
+                <h3>&nbsp; @Model.TenKH</h3>
+            </div>
+            <div class="row">
+                <h3>&nbsp; @Model.NgaySinh</h3>
+            </div>
+            <div class="row">
+                <h3>&nbsp; @Model.DienThoai</h3>
+            </div>
+            <div class="row">
+                <h3>&nbsp; @Model.Email</h3>
+            </div>
+            <div class="row">
+                <h3>&nbsp; @Model.DiaChi</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<br />
+<button class="btn btn-info">
+    @Html.ActionLink("Quay lại cửa hàng", "Index","DoChoi")
+</button>

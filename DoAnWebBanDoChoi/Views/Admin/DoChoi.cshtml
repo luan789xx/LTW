@@ -1,0 +1,110 @@
+﻿@using DoAnWebBanDoChoi.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnWebBanDoChoi.Models.DoChoi>
+
+@helper Truncate(string input, int length)
+{
+    if(input.Length<length)
+    {
+            @input
+    }
+    else
+    {
+            @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "DoChoi";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN SÁCH</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "ThemMoiDC", "Admin")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:200px">
+            Tên sách
+        </th>
+        <th style="width:100px">
+            Giá bán
+        </th>
+        <th style="width:300px">
+            Mô tả
+        </th>
+        <th style="width:150px">
+            Ngày cập nhật
+        </th>
+        <th style="width:120px">
+            Ảnh bìa
+        </th>
+        <th style="width:120px">
+            Số lượng tồn
+        </th>
+        <th style="width:120px">
+            Tên thương hiệu
+        </th>
+        <th style="width:100px">
+            Tên chất liệu
+        </th>
+        <th style="width:100px">
+            Tên xuất xứ
+        </th>
+        <th style="width:100px">
+            Tên loại
+        </th>
+        <th style="width:400px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDC)
+        </td>
+        <td>
+            @String.Format("{0:0,0}", item.GiaBan) VNĐ
+        </td>
+        <td>
+            @Truncate(item.MoTa, 100)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Content/img/"+item.AnhBia)" width="250px"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThuongHieu.TenTH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChatLieu.TenCL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XuatXu.TenXX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loai.TenLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaDC", new { id=item.MaDC }) |
+            @Html.ActionLink("Chi tiết", "ChiTietDC", new { id=item.MaDC }) |
+            @Html.ActionLink("Xóa", "XoaDC", new { id=item.MaDC })
+        </td>
+    </tr>
+}
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("DoChoi", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

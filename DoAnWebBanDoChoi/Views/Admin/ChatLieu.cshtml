@@ -1,0 +1,34 @@
+﻿@model IEnumerable<DoAnWebBanDoChoi.Models.ChatLieu>
+
+@{
+    ViewBag.Title = "ChatLieu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN CHẤT LIỆU</h2>
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "ThemMoiCL")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên chất liệu
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenCL)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaCL", new { id=item.MaCL }) |
+            @Html.ActionLink("Chi tiết", "ChiTietCL", new { id=item.MaCL }) |
+            @Html.ActionLink("Xóa", "XoaCL", new { id=item.MaCL })
+        </td>
+    </tr>
+}
+
+</table>

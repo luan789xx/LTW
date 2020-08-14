@@ -1,0 +1,52 @@
+  <param name="order">The filter run order.</param>
+    </member>
+    <member name="M:System.Web.Mvc.GlobalFilterCollection.Clear">
+      <summary>Removes all filters from the global filter collection.</summary>
+    </member>
+    <member name="M:System.Web.Mvc.GlobalFilterCollection.Contains(System.Object)">
+      <summary>Determines whether a filter is in the global filter collection.</summary>
+      <returns>true if <paramref name="filter" /> is found in the global filter collection; otherwise, false.</returns>
+      <param name="filter">The filter.</param>
+    </member>
+    <member name="P:System.Web.Mvc.GlobalFilterCollection.Count">
+      <summary>Gets the number of filters in the global filter collection.</summary>
+      <returns>The number of filters in the global filter collection.</returns>
+    </member>
+    <member name="M:System.Web.Mvc.GlobalFilterCollection.GetEnumerator">
+      <summary>Returns an enumerator that iterates through the global filter collection.</summary>
+      <returns>An enumerator that iterates through the global filter collection.</returns>
+    </member>
+    <member name="M:System.Web.Mvc.GlobalFilterCollection.Remove(System.Object)">
+      <summary>Removes all the filters that match the specified filter.</summary>
+      <param name="filter">The filter to remove.</param>
+    </member>
+    <member name="M:System.Web.Mvc.GlobalFilterCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>This API supports the ASP.NET MVC infrastructure and is not intended to be used directly from your code. </summary>
+      <returns>An enumerator that iterates through the global filter collection.</returns>
+    </member>
+    <member name="M:System.Web.Mvc.GlobalFilterCollection.System#Web#Mvc#IFilterProvider#GetFilters(System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor)">
+      <summary>This API supports the ASP.NET MVC infrastructure and is not intended to be used directly from your code.</summary>
+      <returns>An enumerator that iterates through the global filter collection.</returns>
+      <param name="controllerContext">The controller context.</param>
+      <param name="actionDescriptor">The action descriptor.</param>
+    </member>
+    <member name="T:System.Web.Mvc.GlobalFilters">
+      <summary>Represents the global filter collection.</summary>
+    </member>
+    <member name="P:System.Web.Mvc.GlobalFilters.Filters">
+      <summary>Gets or sets the global filter collection.</summary>
+      <returns>The global filter collection.</returns>
+    </member>
+    <member name="T:System.Web.Mvc.HandleErrorAttribute">
+      <summary>Represents an attribute that is used to handle an exception that is thrown by an action method.</summary>
+    </member>
+    <member name="M:System.Web.Mvc.HandleErrorAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Web.Mvc.HandleErrorAttribute" /> class.</summary>
+    </member>
+    <member name="P:System.Web.Mvc.HandleErrorAttribute.ExceptionType">
+      <summary>Gets or sets the type of the exception.</summary>
+      <returns>The type of the exception.</returns>
+    </member>
+    <member name="P:System.Web.Mvc.HandleErrorAttribute.Master">
+      <summary>Gets or sets the master view for displaying exception information.</summary>
+      <returns>The master view.</retu

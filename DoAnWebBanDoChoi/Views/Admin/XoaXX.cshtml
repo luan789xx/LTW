@@ -1,0 +1,30 @@
+﻿@model DoAnWebBanDoChoi.Models.XuatXu
+
+@{
+    ViewBag.Title = "XoaXX";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>XÁC NHẬN THÔNG TIN XUẤT XỨ BẠN MUỐN XÓA</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên xuất xứ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenXX)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("TRỞ VỀ", "XuatXu")
+        </div>
+    }
+</div>

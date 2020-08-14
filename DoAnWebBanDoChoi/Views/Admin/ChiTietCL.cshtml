@@ -1,0 +1,26 @@
+﻿@model DoAnWebBanDoChoi.Models.ChatLieu
+
+@{
+    ViewBag.Title = "ChiTietCL";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT CHẤT LIỆU</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên chất liệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenCL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "SuaCL", new { id = Model.MaCL }) |
+    @Html.ActionLink("TRỞ VỀ", "ChatLieu")
+</p>
